@@ -14,7 +14,7 @@ get_header();
 //$description = get_the_archive_description();
 ?>
 
-<?php if ( have_posts() ) : ?>
+<?php //if ( have_posts() ) : ?>
 
 	<!-- <header class="page-header alignwide">
 		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
@@ -23,18 +23,18 @@ get_header();
 		<?php endif; ?>
 	</header> --><!-- .page-header -->
 
-	<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
-		<?php echo the_title(); 
-		echo the_permalink(); 
-		echo get_the_post_thumbnail_url(); ?>
-	<?php endwhile; ?>
+	<?php/// while ( have_posts() ) : ?>
+		<?php //the_post(); ?>
+		<?php //echo the_title(); 
+		//echo the_permalink(); 
+		//echo get_the_post_thumbnail_url(); ?>
+	<?php// endwhile; ?>
 
-	<?php twenty_twenty_one_the_posts_navigation(); ?>
+	<?php //twenty_twenty_one_the_posts_navigation(); ?>
 
-<?php else : ?>
-	<?php get_template_part( 'template-parts/content/content-none' ); ?>
-<?php endif; ?>
+<?php //else : ?>
+	<?php //get_template_part( 'template-parts/content/content-none' ); ?>
+<?php //endif; ?>
 
 
 
@@ -44,13 +44,13 @@ get_header();
 		    	<div class="row">
 		    		<div class="col-xl-8 col-lg-7 col-md-7 d-none d-md-block">
 		    			<div class="breadcrumbs">
-				            <ul>
+				            <!-- <ul>
 				                <li><a href="#">Home</a></li>
 				                <li><a href="#">Category</a></li>
 				                <li>Page active</li>
-				            </ul>
+				            </ul> -->
 		       	 		</div>
-		        		<h1>145 restaurants in Convent Street 2983</h1>
+		        		<!-- <h1>145 restaurants in Convent Street 2983</h1> -->
 		    		</div>
 		    		<div class="col-xl-4 col-lg-5 col-md-5">
 		    			<div class="search_bar_list">
@@ -211,266 +211,47 @@ get_header();
 
 				<div class="col-lg-9">
 					<div class="row">
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							    	<span class="ribbon off">-30%</span>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_1.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Pizza</small>
-							            <div class="item_title">
-							                <h3>Da Alfredo</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							        <li><span>Avg. Price 24$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
+
+						<?php if ( have_posts() ) : ?>
+
+						<?php while ( have_posts() ) : ?>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+								<div class="strip">
+								    <figure>
+								    	<!-- <span class="ribbon off">-30%</span> -->
+								        <img src="<?php echo get_the_post_thumbnail_url(); ?>" data-src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid lazy" alt="">
+								        <a href="<?php echo the_permalink(); ?>" class="strip_info">
+								            <!-- <small>Pizza</small> -->
+								            <div class="item_title">
+								                <h3><?php echo the_title(); ?></h3>
+								                <!-- <small>27 Old Gloucester St</small> -->
+								            </div>
+								        </a>
+								    </figure>
+								    <ul>
+								        <li><span>Avg. Price 24$</span></li>
+								        <li>
+								        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
+								        </li>
+								    </ul>
+								</div>
 							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							    	<span class="ribbon off">-40%</span>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_2.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Burghers</small>
-							            <div class="item_title">
-							                <h3>Best Burghers</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							        <li><span>Avg. Price 14$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.5</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_3.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Vegetarian</small>
-							            <div class="item_title">
-							                <h3>Vego Life</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							       <li><span>Avg. Price 21$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>7.5</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							    	<span class="ribbon off">-25%</span>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_4.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Japanese</small>
-							            <div class="item_title">
-							                <h3>Sushi Temple</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 12$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.5</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							    	<span class="ribbon off">-30%</span>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_5.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Pizza</small>
-							            <div class="item_title">
-							                <h3>Auto Pizza</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 25$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>7.0</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_6.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Burghers</small>
-							            <div class="item_title">
-							                <h3>Alliance</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 18$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							    	<span class="ribbon off">-30%</span>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_7.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Chinese</small>
-							            <div class="item_title">
-							                <h3>Alliance</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 25$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_8.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Sushi</small>
-							            <div class="item_title">
-							                <h3>Dragon Tower</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 28$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_9.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Mexican</small>
-							            <div class="item_title">
-							                <h3>El Paso Tacos</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 29$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_10.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Bakery</small>
-							            <div class="item_title">
-							                <h3>Monnalisa</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 29$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_11.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Mexican</small>
-							            <div class="item_title">
-							                <h3>Guachamole</h3>
-							                <small>135 Newtownards Road</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 29$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-							<div class="strip">
-							    <figure>
-							        <img src="img/lazy-placeholder.png" data-src="img/location_12.jpg" class="img-fluid lazy" alt="">
-							        <a href="detail-restaurant.html" class="strip_info">
-							            <small>Chinese</small>
-							            <div class="item_title">
-							                <h3>Pechino Express</h3>
-							                <small>27 Old Gloucester St</small>
-							            </div>
-							        </a>
-							    </figure>
-							    <ul>
-							         <li><span>Avg. Price 29$</span></li>
-							        <li>
-							        	<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-							        </li>
-							    </ul>
-							</div>
-						</div>
-						<!-- /strip grid -->
+							<!-- /strip grid -->
+							<?php the_post(); ?>
+							
+
+						<?php endwhile; ?>
+
+						
+
+					<?php else : ?>
+						
+					<?php endif; ?>
+						
+
 					</div>
 					<!-- /row -->
-					<div class="pagination_fg">
+					<!-- <div class="pagination_fg">
 					  <a href="#">&laquo;</a>
 					  <a href="#" class="active">1</a>
 					  <a href="#">2</a>
@@ -478,7 +259,7 @@ get_header();
 					  <a href="#">4</a>
 					  <a href="#">5</a>
 					  <a href="#">&raquo;</a>
-					</div>
+					</div> -->
 				</div>
 				<!-- /col -->
 			</div>		
